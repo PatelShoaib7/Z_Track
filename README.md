@@ -2,11 +2,8 @@
 <h3>Feature & Functionality </h3>
 <ol>
   <li>Authentication & Token & FireBase </li>
-  <a href="httpCPQvD"><img src="https://i.ibb.co/pvTwLVg/Screenshot-457.png" alt="Screenshot-457" border="0"></a>
    <li> Mapping Data </li>
-   <a href=""><img src="https://i.ibb.co/wgwxKXw/Screenshot-455.png" alt="Screenshot-455" border="0"></a>
   <li>Serach </li>
-  <a href="httpsc"><img src="https://i.ibb.co/WDjVhVV/Screenshot-456.png" alt="Screenshot-456" border="0"></a>
   <li>LogOut Log_In
 </ol>
 #Tech-Stach
@@ -15,5 +12,7 @@
    <h3>Redux </>
  <h3>Html-CSS </h3>
 <h3>Chakra:UI </h3>
-
+<a href="httpCPQvD"><img src="https://i.ibb.co/pvTwLVg/Screenshot-457.png" alt="Screenshot-457" border="0"></a>
+ <a href=""><img src="https://i.ibb.co/wgwxKXw/Screenshot-455.png" alt="Screenshot-455" border="0"></a>
+ <a href="httpsc"><img src="https://i.ibb.co/WDjVhVV/Screenshot-456.png" alt="Screenshot-456" border="0"></a>
  
