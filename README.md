@@ -9,5 +9,8 @@
 #Tech-Stach
 <h3>React.js
 <h3>JavaScript </>
+   <h3>Redux </>
+ <h3>Html-CSS </h3>
+<h3>Chakra:UI </h3>
 
  
