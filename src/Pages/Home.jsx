@@ -6,10 +6,11 @@ import { json, useNavigate } from 'react-router-dom';
 import {  getDATA_Fun, log_out_Fun } from '../Store/action';
 export const Home = () => {
   const {data , log_out ,  dataError , dataLoading , dataSucess ,vehicalList} = useSelector((state)=> state)
- const token= JSON.parse(localStorage.getItem("TOKEN"));
+ 
+  const token= JSON.parse(localStorage.getItem("TOKEN"));
  const [serchINP , setSeracINP]=useState('');
  const [showData , setSHOWdata]=useState([]);
- console.log(vehicalList,'vehicalList  is')
+ //console.log(vehicalList,'vehicalList  is')
  const navigate = useNavigate()
 const dispatch = useDispatch();
 const habndleSearch =(e)=>{
@@ -35,6 +36,10 @@ const hanldeCLear =()=>{
    setSeracINP(' ')
   setSHOWdata([])
 }
+ const goToLocation =(e)=>{
+  let id = e.target.value;
+  navigate(`/location/:${id}`)
+}
 // console.log(showData , 'showData value ')
 useEffect(() => {
   dispatch(getDATA_Fun(token));
@@ -44,27 +49,15 @@ useEffect(() => {
 }, [showData , token]);
 //console.log(vechileData,"vechileData")
 if(dataLoading) return <div><Spinner
-thickness='4px'
-speed='0.65s'
-emptyColor='gray.200'
-color='blue.500'
-size="xl"
-h="265"
-w="60"
-/>
+thickness='4px'speed='0.65s' emptyColor='gray.200'color='blue.500'
+size="xl"h="265" w="60"/>
 <br />
 
 API FETCHING DATA ID LOADING PLZ WAIT
 </div>
 if(dataError) return <div><Spinner
-thickness='4px'
-speed='0.65s'
-emptyColor='gray.200'
-color='blue.500'
-size="xl"
-h="265"
-w="60"
-/>
+thickness='4px'speed='0.65s'emptyColor='gray.200'
+color='blue.500' size="xl" h="265" w="60"/>
 <br />
 
 OOPPS SOMETHING WENT WRONG CHECK FIREBASE CONNECTION
@@ -86,7 +79,7 @@ OOPPS SOMETHING WENT WRONG CHECK FIREBASE CONNECTION
 
           <div style={{ marginBottom:'rem'}}>
                 <Input w="sm" placeholder='Enter Register Number' name="name" 
-                       value={serchINP} onChange={(e)=> habndleSearch(e)} mt="2rem" mr="0.5rem"/>
+                       value={serchINP}  mt="2rem" mr="0.5rem"/>
                <Button onClick={hanldeCLear} bg="teal" color='white' fontSize={'20px'}>CLAER </Button>
            </div>
            <br />
@@ -97,7 +90,7 @@ OOPPS SOMETHING WENT WRONG CHECK FIREBASE CONNECTION
            <div style={{border:'2px ',borderRadius:'12px', display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:'30px'
                    ,width:'fit-content', margin:"auto"  }}>
                  {
-                  showData.length ?  showData.map((elem)=>(
+                  showData.length ?  showData.map((elem, i)=>(
                     <div  style={{border:'2px solid lightgrey', borderRadius:'12px' , width:'fit-content' , fontSize:'19px'}}>
                           <div >
                           <p style={{fontSize:'25px'}}>{elem.id}{" : "}   {elem.type}  </p>
@@ -108,6 +101,8 @@ OOPPS SOMETHING WENT WRONG CHECK FIREBASE CONNECTION
                               <p> GST : : {elem.organisation.GST}</p>
                               <p>model : {elem.organisation.PAN}</p>
                               <p>City : {elem.organisation.city} {" "} State: {elem.organisation.state}</p>
+                           <br />
+                           
                          </div> 
                      </div>
                   )) : null
@@ -119,7 +114,7 @@ OOPPS SOMETHING WENT WRONG CHECK FIREBASE CONNECTION
     >
       
          {
-                vehicalList.map((elem)=>(
+                vehicalList.map((elem, id)=>(
                   <div style={{border:'2px solid lightgrey' , borderRadius:'12px' }}>
                        <p style={{fontSize:'25px'}}>{elem.id}{" : "}   {elem.type}  </p>
                        <p> immobilizer : {elem.immobilizer}</p>
@@ -129,8 +124,9 @@ OOPPS SOMETHING WENT WRONG CHECK FIREBASE CONNECTION
                        <p>Status : {elem.status}</p>
                        <p>Date: {elem.installationDate}</p>
                        <p> Fule-Source : {elem.fuelDataSource}</p>
-                      
                        <br />
+                       <Button value={id} colorScheme={'whatsapp'}  onClick={(e)=>goToLocation(e)} >GoTo Location</Button>
+                         
 
                   </div>
                 ))
