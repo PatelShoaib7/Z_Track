@@ -1,4 +1,4 @@
-# Z_Track
+<h1> Z_Track </h1>
 <h3>Feature & Functionality </h3>
 <ol>
   <li>Authentication & Token & FireBase </li>
@@ -6,7 +6,7 @@
   <li>Serach </li>
   <li>LogOut Log_In
 </ol>
-#Tech-Stach
+<h2> Tech-Stach </h2>
 <h3>React.js
 <h3>JavaScript </>
    <h3>Redux </>
