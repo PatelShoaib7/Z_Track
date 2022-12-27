@@ -39,8 +39,6 @@ const NavLink = ({ children }) => (
 
 export default function Nav({isChecked , changeBackGrndMOON , changeBackGrndSUN }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
-
-    
   return (
     <>
       <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}  h="5rem"  fontSize={'25px'} pt="0.5rem" mb="0.8rem" borderBottom={'1px solid grey'} position='static'>
