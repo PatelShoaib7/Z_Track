@@ -52,7 +52,6 @@ if(dataLoading) return <div><Spinner
 thickness='4px'speed='0.65s' emptyColor='gray.200'color='blue.500'
 size="xl"h="265" w="60"/>
 <br />
-
 API FETCHING DATA ID LOADING PLZ WAIT
 </div>
 if(dataError) return <div><Spinner
@@ -66,26 +65,16 @@ OOPPS SOMETHING WENT WRONG CHECK FIREBASE CONNECTION
   return (
     <div >
 
-
-
-
        <Button onClick={handleLogOut} color='white' bg="red" >LOG OUT</Button>
        <div  style={{borderTop:'2px solid lightgrey' , width:'auto',
                       marginTop:'50px' , marginBottom:'0.5rem' , margin:'1rem' }}>
      
-
-
-
-
           <div style={{ marginBottom:'rem'}}>
                 <Input w="sm" placeholder='Enter Register Number' name="name" 
                        value={serchINP}  mt="2rem" mr="0.5rem"/>
                <Button onClick={hanldeCLear} bg="teal" color='white' fontSize={'20px'}>CLAER </Button>
            </div>
            <br />
-      
-
-
 
            <div style={{border:'2px ',borderRadius:'12px', display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:'30px'
                    ,width:'fit-content', margin:"auto"  }}>
@@ -102,7 +91,6 @@ OOPPS SOMETHING WENT WRONG CHECK FIREBASE CONNECTION
                               <p>model : {elem.organisation.PAN}</p>
                               <p>City : {elem.organisation.city} {" "} State: {elem.organisation.state}</p>
                            <br />
-                           
                          </div> 
                      </div>
                   )) : null
@@ -110,9 +98,7 @@ OOPPS SOMETHING WENT WRONG CHECK FIREBASE CONNECTION
       </div>
          <br />
       <div style={{border:'2px ',borderRadius:'12px', display:'grid', gridTemplateColumns:'repeat(3,1fr)'
-                   ,width:'fit-content', margin:"auto" ,gap:'0.5rem'  }}
-    >
-      
+                   ,width:'fit-content', margin:"auto" ,gap:'0.5rem'  }}>
          {
                 vehicalList.map((elem, id)=>(
                   <div style={{border:'2px solid lightgrey' , borderRadius:'12px' }}>
@@ -125,13 +111,10 @@ OOPPS SOMETHING WENT WRONG CHECK FIREBASE CONNECTION
                        <p>Date: {elem.installationDate}</p>
                        <p> Fule-Source : {elem.fuelDataSource}</p>
                        <br />
-                       <Button value={id} colorScheme={'whatsapp'}  onClick={(e)=>goToLocation(e)} >GoTo Location</Button>
-                         
-
+                       <Button value={id} colorScheme={'whatsapp'}  onClick={(e)=>goToLocation(e)} >GoTo Location</Button> 
                   </div>
                 ))
          }
-      
       </div>
       </div>
     </div>
