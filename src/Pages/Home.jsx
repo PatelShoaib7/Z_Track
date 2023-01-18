@@ -6,7 +6,6 @@ import { json, useNavigate } from 'react-router-dom';
 import {  getDATA_Fun, log_out_Fun } from '../Store/action';
 export const Home = () => {
   const {data , log_out ,  dataError , dataLoading , dataSucess ,vehicalList} = useSelector((state)=> state)
- 
   const token= JSON.parse(localStorage.getItem("TOKEN"));
  const [serchINP , setSeracINP]=useState('');
  const [showData , setSHOWdata]=useState([]);
